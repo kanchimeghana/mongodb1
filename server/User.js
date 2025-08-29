@@ -1,32 +1,19 @@
-import mongoose from "mongoose";
-
-const userSchema = new mongoose.Schema(
-  {
-    fullName: {
-      type: String,
-      required: true,
-      trim: true,
+//models is a folder to store db schema
+import mongoose from  "mongoose";
+const userSchema=new mongoose.Schema({
+    fullname:{
+        type:String,
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      lowercase: true,
-      trim: true,
-},
-    phone: {
-      type: String,
-      required: true,
-      trim: true,
+    age:{
+        type:Number,
     },
-    age: {
-      type: Number,
-      required: true,
-      min: 0,
+    isAlive:{
+        type:Boolean,
     },
-  },
-  { timestamps: true } // auto adds createdAt & updatedAt
-);
-
-const User = mongoose.model("users", userSchema);
-export default User;
+    email:{
+        type:String,
+    },
+    password:{
+        type:String,
+    }
+})
